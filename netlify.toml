@@ -1,3 +1,4 @@
 [build]
-  command = "gunicorn -w 4 -b 0.0.0.0:$PORT app:app"
-  publish = "your_project_directory/static"
+  command = "pip install -r requirements.txt && python app.py"
+  functions = "omoh/app.py"
+  publish = "omoh/static"
