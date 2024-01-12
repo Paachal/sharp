@@ -2,3 +2,7 @@
   command = "pip install -r requirements.txt && python app.py"
   functions = "omoh/app.py"
   publish = "omoh/static"
+
+[build.environment]
+  FLASK_ENV = "production"
+  PIPENV_NOSPIN = "1"
