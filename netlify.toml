@@ -1,4 +1,4 @@
 [build]
   command = "gunicorn -D -w 4 -b 0.0.0.0:$PORT app:app"
   functions = "omoh/app.py"
-  publish = "omoh/static"
+  publish = "omoh/static"  
