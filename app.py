@@ -1,16 +1,13 @@
-# Import necessary modules
 from flask import Flask, render_template, request, redirect, url_for
 
-# Create a Flask app instance
 app = Flask(__name__)
 app.template_folder = 'templates'
+app.config['APPLICATION_ROOT'] = '/my-flask-app'
 
-# Define the main route
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Define the registration route
 @app.route('/register', methods=['POST'])
 def register():
     # Process the form data (save to database, etc.)
@@ -32,7 +29,6 @@ def register():
                             address=address, 
                             ssn=ssn))
 
-# Define the user details route
 @app.route('/user_details')
 def user_details():
     # Retrieve user details from URL parameters
@@ -51,18 +47,16 @@ def user_details():
                            address=address, 
                            ssn=ssn)
 
-# Define the deposit route
 @app.route('/deposit')
 def deposit():
     # Add logic for handling deposit action here
     return "Deposit Page - Add logic here"
 
-# Define the withdraw route
 @app.route('/withdraw')
 def withdraw():
     # Add logic for handling withdraw action here
     return "Withdraw Page - Add logic here"
 
-# Run the app if this script is executed
 if __name__ == '__main__':
     app.run(debug=True)
+
